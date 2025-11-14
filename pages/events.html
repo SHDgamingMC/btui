@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events | Event Hub</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://unpkg.com/@google/genai@0.1.0/dist/index.umd.js"></script>
+</head>
+<body>
+<header>
+    <div class="logo"><a href="../index.html">Event Hub</a></div>
+    
+    <button class="hamburger" id="hamburger-btn">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+
+    <nav id="nav-menu">
+      <ul>
+         <li><a href="./events.html">Events</a></li>
+         <li><a href="./announcement.html">Announcements</a></li>
+         <li><a href="./calender.html">Calendar</a></li>
+         </ul>
+    </nav>
+</header>
+
+  <div class="tep">
+    <h1>Upcoming Events</h1>
+    <p>Your comprehensive guide to every event, performance, and competition happening on school.</p><br><br><br><br><br>
+    <div class="scdown"></div>
+  </div>
+
+  <div class="mini-event">
+<div class="card-section" id="more">
+  
+  <div class="card">
+    <img src="../img/cover 1.png" alt="Conference Image" class="card-img">
+    
+    <div class="card-content">
+      <div class="card-tags">
+        <span class="tag"> Academic</span>
+        <span class="date">📅 Nov 15th, 2025</span>
+      </div>
+
+      <h2>Science & Tech Exhibition</h2>
+      <p>Witness the future! Explore student innovations in robotics, AI, and sustainable tech. Come support the next generation of engineers and scientists.</p>
+
+      <button class="btn" data-id="science-tech"><span>View Details →</span></button>
+    </div>
+  </div>
+    <div class="card">
+    <img src="../img/cover 2.png" alt="Conference Image" class="card-img">
+    
+    <div class="card-content">
+      <div class="card-tags">
+        <span class="tag"> Sports</span>
+        <span class="date">📅 Oct 29th, 2025</span>
+      </div>
+
+      <h2>Charity Fun Run</h2>
+      <p>Lace up your shoes for a great cause! Join the annual 5K run to support local charities. All fitness levels welcome. Register your spot today!</p>
+
+      <button class="btn" data-id="charity-run"><span>View Details →</span></button>
+    </div>
+  </div>
+    <div class="card">
+    <img src="../img/cover 3.png" alt="Conference Image" class="card-img">
+    
+    <div class="card-content">
+      <div class="card-tags">
+        <span class="tag"> Cultural</span>
+        <span class="date">📅 Oct 25th, 2025</span>
+      </div>
+
+      <h2>Drama Showcase Auditions</h2>
+      <p>Lights, camera, action! The Drama Club is auditioning for the winter showcase. Prepare a one-minute monologue and sign up for a time slot.</p>
+
+      <button class="btn" data-id="drama-auditions"><span>View Details →</span></button>
+    </div>
+    </div>
+    <br><br>
+
+<div class="card">
+    <img src="../img/cover 4.png" alt="Conference Image" class="card-img">
+    
+    <div class="card-content">
+      <div class="card-tags">
+        <span class="tag"> Academic</span>
+        <span class="date">📅Nov 5, 2025 </span>
+      </div>
+
+      <h2>School Debate Finals</h2>
+      <p>The culmination of our season. Watch the top two teams argue current affairs for the coveted golden gavel.</p>
+
+      <button class="btn" data-id="debate-finals"><span>View Details →</span></button>
+    </div>
+
+  </div>
+
+  <div class="card">
+    <img src="../img/cover 5.png" alt="Conference Image" class="card-img">
+    
+    <div class="card-content">
+      <div class="card-tags">
+        <span class="tag"> Sports</span>
+        <span class="date">📅 Nov 1, 2025</span>
+      </div>
+
+      <h2>Ananda Soccer Playoff</h2>
+      <p>Cheer on the anandians as they face their rivals in the District Quarterfinals. Bring your school spirit!</p>
+
+      <button class="btn" data-id="soccer-playoff"><span>View Details →</span></button>
+    </div>
+
+  </div>
+
+  <div class="card">
+    <img src="../img/cover 6.png" alt="Conference Image" class="card-img">
+    
+    <div class="card-content">
+      <div class="card-tags">
+        <span class="tag"> Cultural</span>
+        <span class="date">📅Nov 18, 2025</span>
+      </div>
+
+      <h2>Creative Writing Workshop</h2>
+      <p>A special session hosted by local novelist, Ms. Alisha Khan, focusing on narrative structure and dialogue. Seats are limited.</p>
+
+      <button class="btn" data-id="writing-workshop"><span>View Details →</span></button>
+    </div>
+
+  </div>
+
+  <div class="card">
+    <img src="../img/cover 7.png" alt="Conference Image" class="card-img">
+    
+    <div class="card-content">
+      <div class="card-tags">
+        <span class="tag"> Student Life</span>
+        <span class="date">📅 Oct 24, 2025</span>
+      </div>
+
+      <h2>Parents' Association Meeting</h2>
+      <p>Monthly meeting for parents and guardians to discuss school policy and upcoming fundraising initiatives.</p>
+
+      <button class="btn" data-id="pa-meeting"><span>View Details →</span></button>
+    </div>
+
+  </div>
+
+  <div class="card">
+    <img src="../img/cover 8.png" alt="Conference Image" class="card-img">
+    
+    <div class="card-content">
+      <div class="card-tags">
+        <span class="tag"> Academic</span>
+        <span class="date">📅 Dec 2, 2025</span>
+      </div>
+
+      <h2>"Future Careers" Panel</h2>
+      <p>Alumni and local professionals discuss opportunities in STEM, arts, and finance. Q&A session to follow.</p>
+
+      <button class="btn" data-id="future-careers"><span>View Details →</span></button>
+    </div>
+  </div>
+</div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+<script>
+    // --- New Event Redirection Logic ---
+    document.addEventListener('DOMContentLoaded', function() {
+        const detailButtons = document.querySelectorAll('.btn');
+
+        detailButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Get the unique identifier from the data-id attribute
+                const eventId = this.getAttribute('data-id');
+
+                if (eventId) {
+                    // Redirect to the event-details page, passing the ID as a query parameter
+                    // Example URL: event-details.html?id=science-tech
+                    window.location.href = `event-details.html?id=${eventId}`;
+                } else {
+                    console.error("View Details button clicked without a valid data-id.");
+                }
+            });
+        });
+    });
+
+ // Hamburger Menu Toggle
+    document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.getElementById('hamburger-btn');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', () => {
+        // Toggle the 'active' class on both the hamburger icon and the menu
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    
+    navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    });
+});
+</script>
+
+</body>
+</html>

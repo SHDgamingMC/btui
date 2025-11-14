@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Event Details | Event Hub</title>
+    <link rel="stylesheet" href="">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+              background: linear-gradient(135deg,#00171F,#004E92 ,#4d7af5);
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        
+        /* Event Card Styling (Matching the provided visual) */
+        #event-card {
+            background: linear-gradient(135deg, #18920063, rgba(1, 50, 122, 0.664));
+            border-radius: 15px;
+            color: white;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+        }
+
+        #event-image-container {
+            width: 100%;
+            height: 300px;
+            background-color: #333;
+            background-size: cover;
+            background-position: center;
+        }
+
+        #event-content {
+            padding: 30px;
+        }
+
+        #event-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .tag {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        
+        #event-date {
+            font-size: 1em;
+        }
+
+        #event-title {
+            font-size: 2.2em;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        #event-description {
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        /* NEW BUTTON STYLE */
+        #signup-button {
+            background-color: #2ecc71; /* Green/Accent Color */
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: all 0.3s;
+            border-radius: 30px;
+            margin-top: 15px;
+        }
+
+        #signup-button:hover {
+            background-color: #6dffaa;
+            color: #00171F;
+        }
+        /* --- Additional Detail Section --- */
+        #additional-info {
+            background-color: rgba(0, 0, 0, 0.452);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+            color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #additional-info h3 {
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+            color: #007bff;
+        }
+
+        .info-row {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        .info-row strong {
+            width: 120px;
+            font-weight: bold;
+        }
+
+        a{
+            background: #00171F;
+            width: fit-content;
+            padding: 10px 15px;
+            border-radius: 30px;
+            transition: all 0.3s;
+        }
+
+        a:hover{
+                background: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div id="event-card">
+            <div id="event-image-container"></div>
+            
+            <div id="event-content">
+                
+                <div id="event-meta">
+                    <span id="event-tag" class="tag">Loading...</span>
+                    <span id="event-date">📅 --/--/----</span>
+                </div>
+                
+                <h1 id="event-title">Loading Event...</h1>
+                
+                <p id="event-description">
+                    Please wait while the event details load.
+                </p>
+                
+                <a href="#" id="signup-button">Sign Up / Register for this Event →</a>
+
+            </div>
+        </div>
+        
+        <div id="additional-info">
+            <h3>Event Logistics</h3>
+            
+            <div class="info-row">
+                <strong>Time:</strong>
+                <span id="detail-time">--:--</span>
+            </div>
+            <div class="info-row">
+                <strong>Location:</strong>
+                <span id="detail-location">-- Venue --</span>
+            </div>
+            <div class="info-row">
+                <strong>Mandatory For:</strong>
+                <span id="detail-mandatory">-- None --</span>
+            </div>
+            
+            <h3 style="margin-top: 20px;">Notes from Administration</h3>
+            <p id="detail-admin-notes">
+                No special notes.
+            </p>
+        </div>
+        
+        <a href="events.html" style="display: block; margin-top: 30px; color: #0056b3; text-decoration: none;">&larr; Back to All Events</a>
+
+    </div>
+    
+    <script>
+        // --- 1. CENTRAL EVENT DATA (Must match data-id from events.html) ---
+        const ALL_EVENTS_DATA = [
+            { 
+                id: 'science-tech', 
+                category: 'Academic', 
+                date: 'November 15, 2025', 
+                time: '9:00 AM - 12:00 PM',
+                location: 'School Gymnasium',
+                title: 'Science & Tech Exhibition',
+                description: 'Witness the future! Explore student innovations in robotics, AI, and sustainable tech. Come support the next generation of engineers and scientists.',
+                image: '../img/cover 1.png', 
+                mandatory: 'Middle school students presenting projects.',
+                adminNotes: 'Parking will be available in the East Lot. Judges check in at the welcome desk by 8:45 AM.'
+            },
+            { 
+                id: 'charity-run', 
+                category: 'Sports', 
+                date: 'October 29, 2025', 
+                time: '7:30 AM - 9:00 AM',
+                location: 'School Track & Field',
+                title: 'Charity Fun Run',
+                description: 'Lace up your shoes for a great cause! Join the annual 5K run to support local charities. All fitness levels welcome. Register your spot today!',
+                image: '../img/cover 2.png',
+                mandatory: 'None',
+                adminNotes: 'Please bring your own water bottle. Check-in starts at 7:00 AM.'
+            },
+            { 
+                id: 'drama-auditions', 
+                category: 'Cultural', 
+                date: 'October 25, 2025', 
+                time: '3:30 PM - 5:00 PM',
+                location: 'Drama Studio (Room 101)',
+                title: 'Drama Showcase Auditions',
+                description: 'Lights, camera, action! The Drama Club is auditioning for the winter showcase. Prepare a one-minute monologue and sign up for a time slot.',
+                image: '../img/cover 3.png',
+                mandatory: 'Students interested in lead roles.',
+                adminNotes: 'Sign-up sheets are on the notice board outside the auditorium.'
+            },
+            { 
+                id: 'debate-finals', 
+                category: 'Academic', 
+                date: 'November 5, 2025', 
+                time: '6:30 PM - 8:00 PM',
+                location: 'School Auditorium',
+                title: 'School Debate Finals',
+                description: 'The culmination of our season. Watch the top two teams argue current affairs for the coveted golden gavel.',
+                image: '../img/cover 4.png',
+                mandatory: 'Debate Club Members',
+                adminNotes: 'Doors open at 6:00 PM. No flash photography.'
+            },
+            { 
+                id: 'soccer-playoff', 
+                category: 'Sports', 
+                date: 'November 1, 2025', 
+                time: '4:00 PM',
+                location: 'Main Field',
+                title: 'Varsity Soccer Playoff',
+                description: 'Cheer on the Wildcats as they face their rivals in the District Quarterfinals. Bring your school spirit!',
+                image: '../img/cover 5.png',
+                mandatory: 'Varsity Team',
+                adminNotes: 'Tickets are $5 at the gate for non-students.'
+            },
+            { 
+                id: 'writing-workshop', 
+                category: 'Cultural', 
+                date: 'November 18, 2025', 
+                time: '3:30 PM - 5:30 PM',
+                location: 'Library Conference Room',
+                title: 'Creative Writing Workshop',
+                description: 'A special session hosted by local novelist, Ms. Alisha Khan, focusing on narrative structure and dialogue. Seats are limited.',
+                image: '../img/cover 6.png',
+                mandatory: 'None',
+                adminNotes: 'Please RSVP by November 15th to Ms. Jones.'
+            },
+            { 
+                id: 'pa-meeting', 
+                category: 'Student Life', 
+                date: 'October 24, 2025', 
+                time: '7:00 PM - 8:30 PM',
+                location: 'School Cafeteria',
+                title: "Parents' Association Meeting",
+                description: 'Monthly meeting for parents and guardians to discuss school policy and upcoming fundraising initiatives.',
+                image: '../img/cover 7.png',
+                mandatory: 'None',
+                adminNotes: 'Childcare will be provided in the daycare room.'
+            },
+            { 
+                id: 'future-careers', 
+                category: 'Academic', 
+                date: 'December 2, 2025', 
+                time: '6:00 PM - 8:00 PM',
+                location: 'Auditorium',
+                title: '"Future Careers" Panel',
+                description: 'Alumni and local professionals discuss opportunities in STEM, arts, and finance. Q&A session to follow.',
+                image: '../img/cover 8.png',
+                mandatory: 'None',
+                adminNotes: 'Refreshments will be served after the Q&A.'
+            }
+        ];
+
+        // --- 2. DYNAMIC RENDERING AND SIGNUP LINK FUNCTION ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const eventId = urlParams.get('id');
+            const event = ALL_EVENTS_DATA.find(e => e.id === eventId);
+
+            if (event) {
+                // ... (existing content loading logic) ...
+                document.getElementById('pageTitle').textContent = event.title + ' | Details';
+                document.getElementById('event-tag').textContent = event.category;
+                document.getElementById('event-date').textContent = `📅 ${event.date}`;
+                document.getElementById('event-title').textContent = event.title;
+                document.getElementById('event-description').textContent = event.description;
+                document.getElementById('event-image-container').style.backgroundImage = `url('${event.image}')`;
+                document.getElementById('detail-time').textContent = event.time;
+                document.getElementById('detail-location').textContent = event.location;
+                document.getElementById('detail-mandatory').textContent = event.mandatory || 'None';
+                document.getElementById('detail-admin-notes').textContent = event.adminNotes || 'No special notes from administration.';
+                
+                // Set the dynamic Sign Up link:
+                const signupButton = document.getElementById('signup-button');
+                // This link assumes you have a page called signup.html and passes the event ID
+                signupButton.href = `signup.html?event=${eventId}`; 
+
+            } else {
+                // Display error for event not found
+                document.getElementById('pageTitle').textContent = 'Error | Event Not Found';
+                document.getElementById('event-tag').textContent = 'Error';
+                document.getElementById('event-title').textContent = 'Event Not Found';
+                document.getElementById('event-description').textContent = 'The requested event could not be found. Please return to the events page.';
+                document.getElementById('signup-button').style.display = 'none'; // Hide button on error
+            }
+        });
+    </script>
+</body>
+</html>

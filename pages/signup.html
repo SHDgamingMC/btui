@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Event Sign Up</title>
+    <style>
+
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg,#00171F,#004E92);
+            background-size: cover;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: rgba(0, 0, 0, 0.322);
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #0056b3;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        #event-name-display {
+            text-align: center;
+            font-size: 1.5em;
+            color: #2ecc71; /* Green accent color */
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+        
+        /* Form Styling */
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+        input[type="text"],
+        input[type="email"],
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 1em;
+        }
+        .submit-btn {
+            background-color: #0056b3;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 45px;
+            cursor: pointer;
+            font-size: 1.1em;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #004494;
+        }
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 1em;
+            resize: vertical;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Register for Event</h1>
+        <p id="event-name-display">Loading Event Name...</p>
+
+        <form id="signup-form">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="status">I am a:</label>
+                <select id="status" name="status" required>
+                    <option value="">Select Status</option>
+                    <option value="student">Student</option>
+                    <option value="parent">Parent/Guardian</option>
+                    <option value="staff">Staff/Faculty</option>
+                    <option value="community">Community Member</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="comments">Comments (Optional)</label>
+                <textarea id="comments" name="comments" rows="3" ></textarea>
+            </div>
+            
+            <input type="hidden" id="event-id-hidden" name="event-id">
+
+            <button type="submit" class="submit-btn">Complete Registration</button>
+        </form>
+
+        <a href="events.html" class="back-link">&larr; Back to Events List</a>
+    </div>
+<br><br><br><br><br><br><br><br>
+
+    
+    <script>
+        // --- 1. CENTRAL EVENT DATA (Used to display the event name) ---
+        // Note: This must be identical to the list in event-details.html
+        const ALL_EVENTS_DATA = [
+            { id: 'science-tech', title: 'Science & Tech Exhibition' },
+            { id: 'charity-run', title: 'Charity Fun Run' },
+            { id: 'drama-auditions', title: 'Drama Showcase Auditions' },
+            { id: 'debate-finals', title: 'School Debate Finals' },
+            { id: 'soccer-playoff', title: 'Varsity Soccer Playoff' },
+            { id: 'writing-workshop', title: 'Creative Writing Workshop' },
+            { id: 'pa-meeting', title: "Parents' Association Meeting" },
+            { id: 'future-careers', title: '"Future Careers" Panel' }
+        ];
+
+        // --- 2. DYNAMIC LOADING LOGIC ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const eventId = urlParams.get('event');
+            const eventNameDisplay = document.getElementById('event-name-display');
+            const eventIdHidden = document.getElementById('event-id-hidden');
+            const event = ALL_EVENTS_DATA.find(e => e.id === eventId);
+
+            if (event) {
+                // Display the event title to the user
+                eventNameDisplay.textContent = event.title;
+                document.getElementById('pageTitle').textContent = `Register for ${event.title}`;
+                
+                // Set the hidden field value (useful for form submission)
+                eventIdHidden.value = eventId; 
+
+            } else {
+                // Handle case where ID is missing or invalid
+                eventNameDisplay.textContent = "Error: Event Not Specified.";
+                eventNameDisplay.style.color = '#e74c3c'; // Red
+                document.getElementById('signup-form').style.display = 'none';
+            }
+        });
+        
+        // --- 3. FORM SUBMISSION HANDLING (Client-side only) ---
+        document.getElementById('signup-form').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+            const eventTitle = document.getElementById('event-name-display').textContent;
+            
+            // In a real application, you would send this data to a server here.
+            
+            alert(`✅ Success! You have registered for the "${eventTitle}". 
+Thank you! (This is a client-side alert; no data was sent to a server.)`);
+            
+            this.reset();
+        });
+    </script>
+</body>
+</html>

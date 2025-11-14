@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Announcements - Event Hub</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header>
+    <div class="logo"><a href="../index.html">Event Hub</a></div>
+    
+    <button class="hamburger" id="hamburger-btn">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+
+    <nav id="nav-menu">
+      <ul>
+         <li><a href="./events.html">Events</a></li>
+         <li><a href="./announcement.html">Announcements</a></li>
+         <li><a href="./calender.html">Calendar</a></li>
+         </ul>
+    </nav>
+</header>
+<br><br><br><br><br><br>
+
+  <h1 class="EM">Announcements</h1>
+    <section id="announcement-controls" class="announcement-controls">
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search announcements by title or keyword..." onkeyup="filterAnnouncements()">
+        </div>
+
+        <div class="filter-sort-container">
+            <label for="categoryFilter">Category:</label>
+            <select id="categoryFilter" onchange="filterAnnouncements()">
+                <option value="All">All Categories</option>
+                <option value="Administration">Administration</option>
+                <option value="Deadlines">Deadlines</option>
+                <option value="Sports">Sports</option>
+                <option value="Student Life">Student Life</option>
+                <option value="Academic">Academic</option>
+                <option value="Cultural">Cultural</option>
+            </select>
+
+            <label for="sortControl">Sort By:</label>
+            <select id="sortControl" onchange="sortAnnouncements()">
+                <option value="newest">Date (Newest First)</option>
+                <option value="oldest">Date (Oldest First)</option>
+                <option value="title">Title (A-Z)</option>
+            </select>
+        </div>
+    </section>
+
+    <section id="announcement-list" class="announcement-list">
+        <div class="announcement-card" data-id="A001" data-category="Administration" data-date="2025-10-14" data-title="PTM Rescheduled">
+            <span class="category-tag tag-admin">ADMINISTRATION</span>
+            <h4>[URGENT] Annual Parent-Teacher Meeting Rescheduled</h4>
+            <p class="date">October 14, 2025</p>
+            <p>Due to unforeseen logistical circumstances, the PTM has been moved. The **NEW date** is Friday, November 1st, 4:00 PM - 7:00 PM.</p>
+        </div>
+        <div class="announcement-card" data-id="A002" data-category="Sports" data-date="2025-10-08" data-title="Soccer Team Wins Championship">
+            <span class="category-tag tag-sports">SPORTS</span>
+            <h4>CHAMPIONS! Ananda Team Clinches District Title</h4>
+            <p class="date">October 8, 2025</p>
+            <p>Congratulations to the Ananda Soccer Team for their stunning 3-1 victory! A celebratory assembly will be held next Tuesday.</p>
+        </div>
+        <div class="announcement-card" data-id="A003" data-category="Deadlines" data-date="2025-10-10" data-title="Permission Slips Due">
+            <span class="category-tag tag-deadlines">DEADLINES</span>
+            <h4>FINAL REMINDER: Permission Slips Due for History Field Trip</h4>
+            <p class="date">October 10, 2025</p>
+            <p>All 9th-grade forms must be submitted to the Main Office or to Mr. Harrison by end of day, Friday, October 15th.</p>
+        </div>
+        <div class="announcement-card" data-id="A004" data-category="Student Life" data-date="2025-09-28" data-title="Chess Club Launch">
+            <span class="category-tag tag-life">STUDENT LIFE</span>
+            <h4>New Club Launch: Chess & Strategy Club</h4>
+            <p class="date">September 28, 2025</p>
+            <p>Ready to play? Our first introductory meeting is next Wednesday in the Library. All skill levels welcome!</p>
+        </div>
+        <div class="announcement-card" data-id="A005" data-category="Administration" data-date="2025-09-25" data-title="School Closed for Staff PD">
+            <span class="category-tag tag-admin">ADMINISTRATION</span>
+            <h4>School Closed for Staff Professional Development</h4>
+            <p class="date">September 25, 2025</p>
+            <p>Reminder: The school will be closed to all students next Friday, October 4th. Classes resume Monday.</p>
+        </div>
+        <div class="announcement-card" data-id="A006" data-category="Sports" data-date="2025-09-20" data-title="Basketball Tryouts">
+            <span class="category-tag tag-sports">SPORTS</span>
+            <h4>Varsity Basketball Tryout Schedule Announced</h4>
+            <p class="date">September 20, 2025</p>
+            <p>Mandatory tryouts for all interested students begin next week. Check the full schedule for times and location.</p>
+        </div>
+        <div class="announcement-card" data-id="A007" data-category="Deadlines" data-date="2025-09-15" data-title="Yearbook Photos Due">
+            <span class="category-tag tag-deadlines">DEADLINES</span>
+            <h4>Final Call for Yearbook Photo Submissions</h4>
+            <p class="date">September 15, 2025</p>
+            <p>Submit your club, group, and candid photos by end of day Friday. Late submissions cannot be accepted!</p>
+        </div>
+        <div class="announcement-card" data-id="A008" data-category="Administration" data-date="2025-09-12" data-title="Guidance Counselor Office Hours">
+            <span class="category-tag tag-admin">ADMINISTRATION</span>
+            <h4>Guidance Counselor Office Hours Change</h4>
+            <p class="date">September 12, 2025</p>
+            <p>Ms. Rodriguez's weekly office hours will temporarily shift to mornings only, effective immediately.</p>
+        </div>
+        <div class="announcement-card" data-id="A009" data-category="Cultural" data-date="2025-09-05" data-title="Poetry Slam">
+            <span class="category-tag tag-academic">CULTURAL</span>
+            <h4>Poetry Slam Contest Details Released</h4>
+            <p class="date">September 5, 2025</p>
+            <p>Rules and sign-up sheets for the annual student poetry slam competition are now available in the English office.</p>
+        </div>
+        <div class="announcement-card" data-id="A010" data-category="Academic" data-date="2025-08-25" data-title="Honor Roll Posted">
+            <span class="category-tag tag-academic">ACADEMIC</span>
+            <h4>Academic Excellence Honor Roll Posted</h4>
+            <p class="date">August 25, 2025</p>
+            <p>Congratulations to all students who achieved Honor Roll status for the previous semester! The full list is posted outside the main office.</p>
+        </div>
+
+        <div class="announcement-card hidden" data-id="A011" data-category="Administration" data-date="2025-08-15" data-title="New Security Protocols">
+            <span class="category-tag tag-admin">ADMINISTRATION</span>
+            <h4>New Security Protocols Implemented</h4>
+            <p class="date">August 15, 2025</p>
+            <p>All visitors must now pre-register via the online portal starting September 1st.</p>
+        </div>
+        <div class="announcement-card hidden" data-id="A012" data-category="Sports" data-date="2025-08-10" data-title="Cross Country Schedule">
+            <span class="category-tag tag-sports">SPORTS</span>
+            <h4>Cross Country Season Schedule Finalized</h4>
+            <p class="date">August 10, 2025</p>
+            <p>View the full season schedule and bus times on the Athletics page. First meet is August 25th.</p>
+        </div>
+        <div class="announcement-card hidden" data-id="A013" data-category="Academic" data-date="2025-08-01" data-title="AP Enrollment Deadline">
+            <span class="category-tag tag-academic">ACADEMIC</span>
+            <h4>AP Course Enrollment Deadline Approaching</h4>
+            <p class="date">August 1, 2025</p>
+            <p>The deadline to drop or add AP courses for the Fall semester is August 15th.</p>
+        </div>
+        <div class="announcement-card hidden" data-id="A014" data-category="Student Life" data-date="2025-07-28" data-title="Locker Assignments">
+            <span class="category-tag tag-life">STUDENT LIFE</span>
+            <h4>Locker Assignments Released for New Year</h4>
+            <p class="date">July 28, 2025</p>
+            <p>Check your school email for your new locker number and combination. Distribution will be staggered.</p>
+        </div>
+        <div class="announcement-card hidden" data-id="A015" data-category="Administration" data-date="2025-07-20" data-title="New Principal Welcome">
+            <span class="category-tag tag-admin">ADMINISTRATION</span>
+            <h4>Welcome to New Principal, Dr. Smith!</h4>
+            <p class="date">July 20, 2025</p>
+            <p>We are pleased to introduce Dr. John Smith as the new Principal starting this school year.</p>
+        </div>
+        <div class="announcement-card hidden" data-id="A016" data-category="Deadlines" data-date="2025-07-15" data-title="Supply Fees Due">
+            <span class="category-tag tag-deadlines">DEADLINES</span>
+            <h4>Annual Supply Fee Due by August 1st</h4>
+            <p class="date">July 15, 2025</p>
+            <p>Please pay the annual supply fee online or in the main office.</p>
+        </div>
+        <div class="announcement-card hidden" data-id="A017" data-category="Sports" data-date="2025-07-10" data-title="Football Camp">
+            <span class="category-tag tag-sports">SPORTS</span>
+            <h4>Summer Football Camp Registration Open</h4>
+            <p class="date">July 10, 2025</p>
+            <p>Registration for the two-week summer football camp is now live on the event page.</p>
+        </div>
+        <div class="announcement-card hidden" data-id="A018" data-category="Academic" data-date="2025-07-05" data-title="Summer Reading List">
+            <span class="category-tag tag-academic">ACADEMIC</span>
+            <h4>Required Summer Reading Lists Published</h4>
+            <p class="date">July 5, 2025</p>
+            <p>Summer reading lists for all grades are available on the school website.</p>
+        </div>
+        <div class="announcement-card hidden" data-id="A019" data-category="Cultural" data-date="2025-06-25" data-title="Band Camp Dates">
+            <span class="category-tag tag-academic">CULTURAL</span>
+            <h4>Marching Band Camp Dates Confirmed</h4>
+            <p class="date">June 25, 2025</p>
+            <p>All members must attend the mandatory training camp from July 15th to 19th.</p>
+        </div>
+        <div class="announcement-card hidden" data-id="A020" data-category="Student Life" data-date="2025-06-20" data-title="Volunteer Opportunities">
+            <span class="category-tag tag-life">STUDENT LIFE</span>
+            <h4>New Student Volunteer Opportunities Available</h4>
+            <p class="date">June 20, 2025</p>
+            <p>Earn community service hours by helping organize school archives this summer.</p>
+        </div>
+        </section>
+
+    <div id="load-more-container">
+        <button id="loadMoreButton" onclick="loadMoreAnnouncements()">
+            Load More (Showing 10 of 55)
+        </button>
+        <p id="endOfListMessage" style="display:none;">You have reached the end of the announcement archive. 🗞️</p>
+    </div>
+
+
+    <script>
+        // --- State Management Variables ---
+        const announcementList = document.getElementById('announcement-list');
+        const loadMoreButton = document.getElementById('loadMoreButton');
+        const endMessage = document.getElementById('endOfListMessage');
+        
+        let announcementCards = Array.from(document.querySelectorAll('.announcement-card'));
+        
+        // --- Pagination Logic ---
+        let currentlyDisplayed = 10;
+        const totalAnnouncements = announcementCards.length; // Total is now determined by HTML cards
+        const batchSize = 15; // Load 15 at a time for quicker testing
+
+        function updateButtonText() {
+            loadMoreButton.textContent = `Load More (Showing ${currentlyDisplayed} of ${totalAnnouncements})`;
+        }
+
+        // --- Core Functions: Load and Sort ---
+
+        function sortAnnouncements() {
+            const sortValue = document.getElementById('sortControl').value;
+            const sortableCards = announcementCards.slice(); // Copy of the full list
+
+            sortableCards.sort((a, b) => {
+                const titleA = a.getAttribute('data-title').toUpperCase();
+                const titleB = b.getAttribute('data-title').toUpperCase();
+                const dateA = new Date(a.getAttribute('data-date'));
+                const dateB = new Date(b.getAttribute('data-date'));
+
+                if (sortValue === 'newest') return dateB - dateA;
+                if (sortValue === 'oldest') return dateA - dateB;
+                if (sortValue === 'title') {
+                    if (titleA < titleB) return -1;
+                    if (titleA > titleB) return 1;
+                    return 0;
+                }
+                return 0;
+            });
+
+            // Re-append all cards in the new order
+            sortableCards.forEach(card => {
+                announcementList.appendChild(card);
+            });
+            announcementCards = sortableCards; // Update the reference
+            filterAnnouncements(); // Re-apply filter and hidden state
+        }
+
+        function filterAnnouncements() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const selectedCategory = document.getElementById('categoryFilter').value;
+            let visibleCount = 0;
+
+            announcementCards.forEach((card, index) => {
+                const cardTitle = card.getAttribute('data-title').toLowerCase();
+                const cardContent = card.innerText.toLowerCase();
+                const cardCategory = card.getAttribute('data-category');
+
+                const matchesSearch = cardTitle.includes(searchTerm) || cardContent.includes(searchTerm);
+                const matchesCategory = (selectedCategory === 'All' || cardCategory === selectedCategory);
+                
+                // Card visibility logic
+                if (matchesSearch && matchesCategory) {
+                    // Only show cards that are currently loaded (index < currentlyDisplayed)
+                    if (index < currentlyDisplayed) {
+                         card.classList.remove('hidden');
+                         visibleCount++;
+                    } else {
+                        // Keep loaded cards hidden if they are beyond the initial load point
+                        card.classList.add('hidden');
+                    }
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            // Update the 'Showing X of Y' display logic (can be simple text update for no-backend)
+            // For this no-backend solution, we'll keep the loadMoreButton simple.
+        }
+
+        // --- Load More Logic with Animation ---
+        function loadMoreAnnouncements() {
+            let newlyShownCount = 0;
+            const targetIndex = Math.min(currentlyDisplayed + batchSize, totalAnnouncements);
+            const cardsToAnimate = [];
+
+            // Iterate through the hidden cards from the current display point up to the target
+            for (let i = currentlyDisplayed; i < targetIndex; i++) {
+                const card = announcementCards[i];
+                if (card) {
+                    // Check if the card matches the current filters before showing it
+                    const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+                    const selectedCategory = document.getElementById('categoryFilter').value;
+                    const cardTitle = card.getAttribute('data-title').toLowerCase();
+                    const cardCategory = card.getAttribute('data-category');
+
+                    const matchesSearch = cardTitle.includes(searchTerm) || card.innerText.toLowerCase().includes(searchTerm);
+                    const matchesCategory = (selectedCategory === 'All' || cardCategory === selectedCategory);
+                    
+                    card.classList.remove('hidden');
+                    
+                    if (matchesSearch && matchesCategory) {
+                        card.classList.add('fade-in');
+                        cardsToAnimate.push(card);
+                    }
+                    
+                    newlyShownCount++;
+                }
+            }
+            
+            // Remove the animation class shortly after showing them (to allow re-triggering)
+            setTimeout(() => {
+                cardsToAnimate.forEach(card => card.classList.remove('fade-in'));
+            }, 1000); // 1000ms is slightly longer than the animation duration
+
+            currentlyDisplayed = targetIndex;
+            updateButtonText();
+
+            // Check if all items are loaded
+            if (currentlyDisplayed >= totalAnnouncements) {
+                loadMoreButton.style.display = 'none';
+                endMessage.style.display = 'block';
+            }
+        }
+
+        // --- Initialization ---
+        function initializePage() {
+            // Sort by default ('newest') and set initial state
+            sortAnnouncements();
+            updateButtonText();
+
+            // Hide all cards past the initial 10 load point
+            announcementCards.forEach((card, index) => {
+                if (index >= 10) {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+        
+        document.addEventListener('DOMContentLoaded', initializePage);
+
+        // Hamburger Menu Toggle
+    document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.getElementById('hamburger-btn');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', () => {
+        // Toggle the 'active' class on both the hamburger icon and the menu
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    });
+});
+    </script>
+
+</body>
+</html>

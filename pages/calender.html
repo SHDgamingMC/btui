@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> School Event Calendar  - Event Hub</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo"><a href="../index.html">Event Hub</a></div>
+    
+    <button class="hamburger" id="hamburger-btn">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+
+    <nav id="nav-menu">
+      <ul>
+         <li><a href="./events.html">Events</a></li>
+         <li><a href="./announcement.html">Announcements</a></li>
+         <li><a href="./calender.html">Calendar</a></li>
+         </ul>
+    </nav>
+</header>
+
+  <br><br><br><br><br>
+
+    <div class="tptext">
+        <h1>School Event Calendar </h1>
+        <p>View all upcoming deadlines, meetings, and events in one organized monthly schedule.</p>
+    </div>
+
+
+    
+    <div id="calendar-container">
+
+        <div id="controls-key">
+            <h3>Filter Events:</h3>
+            <div id="category-filters">
+                <label class="filter-label"><input type="checkbox" data-category="Academic" checked onchange="filterCalendar()">
+                    <span class="filter-color color-academic"></span> Academic
+                </label>
+                <label class="filter-label"><input type="checkbox" data-category="Sports" checked onchange="filterCalendar()">
+                    <span class="filter-color color-sports"></span> Sports
+                </label>
+                <label class="filter-label"><input type="checkbox" data-category="Cultural" checked onchange="filterCalendar()">
+                    <span class="filter-color color-cultural"></span> Cultural
+                </label>
+                <label class="filter-label"><input type="checkbox" data-category="Administration" checked onchange="filterCalendar()">
+                    <span class="filter-color color-admin"></span> Admin/Deadline
+                </label>
+                <label class="filter-label"><input type="checkbox" data-category="Student Life" checked onchange="filterCalendar()">
+                    <span class="filter-color color-life"></span> Student Life
+                </label>
+            </div>
+        </div>
+        
+        <div id="calendar-header">
+            <button onclick="changeMonth(-1)">&leftarrow;</button>
+            <h2 id="monthTitle">October  2025</h2>
+            <button onclick="changeMonth(1)">&rightarrow;</button>
+        </div>
+
+
+        
+   <div id="calendar-wrapper"> 
+    
+    <div id="day-names" class="month-grid active-month" style="display: grid; position: relative;">
+        <div class="day-name">Sun</div>
+        <div class="day-name">Mon</div>
+        <div class="day-name">Tue</div>
+        <div class="day-name">Wed</div>
+        <div class="day-name">Thu</div>
+        <div class="day-name">Fri</div>
+        <div class="day-name">Sat</div>
+    </div>
+    
+    <div id="october-grid" class="month-grid active-month content-grid">
+        <div class="day-box day-other-month"></div> 
+        <div class="day-box day-other-month"></div>
+        <div class="day-box day-other-month"></div>
+        <div class="day-box day-other-month"></div>
+        
+        <div class="day-box"><div class="day-number">1</div></div>
+        <div class="day-box"><div class="day-number">2</div></div>
+        <div class="day-box"><div class="day-number">3</div></div>
+        <div class="day-box"><div class="day-number">4</div></div>
+        <div class="day-box"><div class="day-number">5</div></div>
+        <div class="day-box"><div class="day-number">6</div></div>
+        <div class="day-box"><div class="day-number">7</div></div>
+        <div class="day-box"><div class="day-number">8</div></div>
+        <div class="day-box"><div class="day-number">9</div></div>
+        <div class="day-box"><div class="day-number">10</div></div>
+        <div class="day-box"><div class="day-number">11</div></div>
+        <div class="day-box"><div class="day-number">12</div></div>
+        <div class="day-box"><div class="day-number">13</div></div>
+        <div class="day-box"><div class="day-number">14</div></div>
+        <div class="day-box"><div class="day-number">15</div></div>
+        <div class="day-box"><div class="day-number">16</div></div>
+        <div class="day-box"><div class="day-number">17</div></div>
+        <div class="day-box"><div class="day-number">18</div></div>
+        <div class="day-box"><div class="day-number">19</div></div>
+        <div class="day-box"><div class="day-number">20</div></div>
+        <div class="day-box"><div class="day-number">21</div></div>
+        <div class="day-box"><div class="day-number">22</div></div>
+        <div class="day-box"><div class="day-number">23</div></div>
+
+        <div class="day-box"><div class="day-number">24</div>
+            <div class="event-block event-life" data-category="Student Life" data-title="Parents' Assoc. Mtg." data-time="10:00 AM" data-location="Library" data-details="Monthly meeting for all parents to discuss school operations and funding.">Parents' Assoc. Mtg.</div>
+        </div>
+
+        <div class="day-box"><div class="day-number">25</div>
+            <div class="event-block event-cultural" data-category="Cultural" data-title="Drama Auditions" data-time="3:30 PM - 5:00 PM" data-location="Drama Studio" data-details="Auditions for the spring musical 'The Lion King'. Sign-up sheet in the main office.">Drama Auditions</div>
+        </div>
+
+        <div class="day-box"><div class="day-number">26</div></div>
+        <div class="day-box"><div class="day-number">27</div></div>
+        <div class="day-box"><div class="day-number">28</div></div>
+
+        <div class="day-box"><div class="day-number">29</div>
+            <div class="event-block event-sports" data-category="Sports" data-title="Charity Fun Run" data-time="8:00 AM" data-location="School Track" data-details="Annual 5K run to raise money for local food bank. All students, staff, and families welcome.">Charity Fun Run</div>
+        </div>
+
+        <div class="day-box"><div class="day-number">30</div></div>
+        <div class="day-box"><div class="day-number">31</div></div>
+
+        <div class="day-box day-other-month"><div class="day-number">1</div></div>
+        <div class="day-box day-other-month"><div class="day-number">2</div></div>
+        <div class="day-box day-other-month"><div class="day-number">3</div></div>
+        <div class="day-box day-other-month"><div class="day-number">4</div></div>
+        <div class="day-box day-other-month"><div class="day-number">5</div></div>
+        <div class="day-box day-other-month"><div class="day-number">6</div></div>
+    </div>
+
+
+    <div id="november-grid" class="month-grid content-grid hidden-month">
+        <div class="day-box day-other-month"></div> 
+        <div class="day-box day-other-month"></div>
+        <div class="day-box day-other-month"></div>
+        <div class="day-box day-other-month"></div>
+        <div class="day-box day-other-month"></div>
+
+        <div class="day-box"><div class="day-number">1</div>
+            <div class="event-block event-admin" data-category="Administration" data-title="PTM Rescheduled" data-time="All Day" data-location="Via Zoom" data-details="Parent-Teacher Meetings are rescheduled due to unforeseen circumstances. Please check your email for the new schedule.">PTM Rescheduled</div>
+            <div class="event-block event-sports" data-category="Sports" data-title="Soccer Playoff" data-time="6:00 PM" data-location="Main Field" data-details="Varsity Soccer Regional Playoff Game vs. North High. Tickets sold at the gate.">Soccer Playoff</div>
+        </div>
+        <div class="day-box"><div class="day-number">2</div></div>
+        <div class="day-box"><div class="day-number">3</div></div>
+        <div class="day-box"><div class="day-number">4</div></div>
+        
+        <div class="day-box"><div class="day-number">5</div>
+            <div class="event-block event-academic" data-category="Academic" data-title="Debate Finals" data-time="7:00 PM" data-location="School Auditorium" data-details="Final round of the inter-school debate competition. Topic: Should AI be regulated?">Debate Finals</div>
+        </div>
+        
+        <div class="day-box"><div class="day-number">6</div></div>
+        <div class="day-box"><div class="day-number">7</div></div>
+        <div class="day-box"><div class="day-number">8</div></div>
+        <div class="day-box"><div class="day-number">9</div></div>
+        <div class="day-box"><div class="day-number">10</div></div>
+        <div class="day-box"><div class="day-number">11</div></div>
+        <div class="day-box"><div class="day-number">12</div></div>
+        <div class="day-box"><div class="day-number">13</div></div>
+        <div class="day-box"><div class="day-number">14</div></div>
+        
+        <div class="day-box"><div class="day-number">15</div>
+            <div class="event-block event-academic" data-category="Academic" data-title="Science Exhibition" data-time="9:00 AM - 12:00 PM" data-location="Gymnasium" data-details="Middle school students present their final science projects to judges and the public.">Science Exhibition</div>
+        </div>
+
+        <div class="day-box"><div class="day-number">16</div></div>
+        <div class="day-box"><div class="day-number">17</div></div>
+
+        <div class="day-box"><div class="day-number">18</div>
+            <div class="event-block event-cultural" data-category="Cultural" data-title="Writing Workshop" data-time="4:00 PM" data-location="English Lab" data-details="Creative writing workshop focused on short fiction. Guest speaker: Jane Doe.">Writing Workshop</div>
+        </div>
+
+        <div class="day-box"><div class="day-number">19</div></div>
+        <div class="day-box"><div class="day-number">20</div></div>
+        <div class="day-box"><div class="day-number">21</div></div>
+        <div class="day-box"><div class="day-number">22</div></div>
+        <div class="day-box"><div class="day-number">23</div></div>
+        <div class="day-box"><div class="day-number">24</div></div>
+        <div class="day-box"><div class="day-number">25</div></div>
+        <div class="day-box"><div class="day-number">26</div></div>
+        <div class="day-box"><div class="day-number">27</div></div>
+        <div class="day-box"><div class="day-number">28</div></div>
+        <div class="day-box"><div class="day-number">29</div></div>
+        <div class="day-box"><div class="day-number">30</div></div>
+        
+        <div class="day-box day-other-month"><div class="day-number">1</div></div>
+        <div class="day-box day-other-month"><div class="day-number">2</div>
+            <div class="event-block event-academic" data-category="Academic" data-title="Future Careers Panel" data-time="2:00 PM" data-location="Main Auditorium" data-details="A networking and Q&A session with alumni across various industries. Open to all upper-grade students.">Future Careers Panel</div>
+        </div>
+        
+    </div>
+</div>
+    </div>
+
+    <div id="event-modal" class="hidden">
+        <div id="modal-content">
+            <span id="close-modal" onclick="closeModal()">&times;</span>
+            <h3 id="modal-title"></h3>
+            <hr>
+            <p><strong>Category:</strong> <span id="modal-category"></span></p>
+            <p><strong>Date:</strong> <span id="modal-date"></span></p>
+            <p><strong>Time:</strong> <span id="modal-time"></span></p>
+            <p><strong>Location:</strong> <span id="modal-location"></span></p>
+            <p class="description"><strong>Details:</strong> <span id="modal-details"></span></p>
+            <button onclick="closeModal()">Close</button>
+        </div>
+    </div>
+           
+<footer>Copyright 2025 &copy; designed and developed by suvin.
+
+  
+</footer>
+
+<script src="../script.js"></script>
+
+    <script>
+    // --- State Management and Data ---
+    let currentMonthIndex = 10; // 10=Oct, 11=Nov, 9=Sept (Simulated)
+    const monthTitle = document.getElementById('monthTitle');
+    const calendarWrapper = document.getElementById('calendar-wrapper'); 
+    const eventModal = document.getElementById('event-modal'); 
+    let eventBlocks; 
+    
+    // References to the new month content grids
+    const octoberGrid = document.getElementById('october-grid');
+    const novemberGrid = document.getElementById('november-grid');
+    
+    const monthNames = {
+        9: 'September 2025 ',
+        10: 'October 2025',
+        11: 'November 2025',
+        12: 'December 2025 '
+    };
+
+    // Helper to get the currently visible content grid
+    function getCurrentGrid() {
+        if (currentMonthIndex === 10) return octoberGrid;
+        if (currentMonthIndex === 11) return novemberGrid;
+        // For simulated months, we use the October grid but hide its events
+        if (currentMonthIndex === 9 || currentMonthIndex === 12) return octoberGrid; 
+        return null;
+    }
+
+
+    // Function to populate and show the modal
+    function showModal(eventElement, dateNumber) {
+        // Only show modal for actual events in the two main months
+        if (currentMonthIndex === 9 || currentMonthIndex === 12) return; 
+
+        const title = eventElement.getAttribute('data-title') || eventElement.textContent;
+        const category = eventElement.getAttribute('data-category');
+        const time = eventElement.getAttribute('data-time') || 'TBD';
+        const location = eventElement.getAttribute('data-location') || 'Check school bulletin';
+        const details = eventElement.getAttribute('data-details') || 'No additional details available.';
+        
+        let monthName = monthNames[currentMonthIndex].replace(' (Simulated)', '');
+        const dateString = `${monthName} ${dateNumber}, 2025`;
+
+        // Populate modal fields
+        document.getElementById('modal-title').textContent = title;
+        document.getElementById('modal-category').textContent = category;
+        document.getElementById('modal-date').textContent = dateString;
+        document.getElementById('modal-time').textContent = time;
+        document.getElementById('modal-location').textContent = location;
+        document.getElementById('modal-details').textContent = details;
+
+        eventModal.classList.remove('hidden');
+    }
+
+    window.closeModal = function() {
+        eventModal.classList.add('hidden');
+    }
+
+    // --- Core Functions: Navigation, Animation, and Visibility ---
+
+    function updateCalendarView(direction) {
+        const nextGrid = getCurrentGrid();
+        
+        // 1. Update the title
+        monthTitle.textContent = monthNames[currentMonthIndex];
+
+        // 2. TOGGLE VISIBILITY and ANIMATION
+        
+        // Hide and remove animation classes from all grids
+        octoberGrid.classList.remove('active-month', 'slide-left', 'slide-right');
+        novemberGrid.classList.remove('active-month', 'slide-left', 'slide-right');
+        
+        // Show the correct grid
+        if (nextGrid) {
+             nextGrid.classList.add('active-month');
+        }
+
+        // Apply animation to the active grid
+        setTimeout(() => {
+            if (direction === 1) { 
+                nextGrid.classList.add('slide-left');
+            } else if (direction === -1) { 
+                nextGrid.classList.add('slide-right');
+            }
+        }, 10); 
+
+        // 3. FILTERING & SIMULATION
+        
+        // All events start visible on Oct/Nov, hidden on Sep/Dec
+        eventBlocks.forEach(block => {
+            if (currentMonthIndex === 9 || currentMonthIndex === 12) {
+                block.classList.add('event-hidden');
+            } else {
+                block.classList.remove('event-hidden');
+            }
+        });
+        
+        // Apply category filters only if we are on Oct or Nov
+        if (currentMonthIndex === 10 || currentMonthIndex === 11) {
+            filterCalendar();
+        }
+    }
+
+
+    function changeMonth(direction) {
+        const previousIndex = currentMonthIndex;
+        currentMonthIndex += direction;
+        
+        if (currentMonthIndex < 9) { currentMonthIndex = 9; }
+        if (currentMonthIndex > 12) { currentMonthIndex = 12; }
+        
+        if (currentMonthIndex !== previousIndex) { 
+            updateCalendarView(direction); 
+        }
+    }
+
+
+    function filterCalendar() {
+        const checkboxes = document.querySelectorAll('#category-filters input[type="checkbox"]');
+        const activeCategories = new Set();
+        checkboxes.forEach(cb => {
+            if (cb.checked) { activeCategories.add(cb.getAttribute('data-category')); }
+        });
+        
+        const activeGrid = getCurrentGrid();
+        if (!activeGrid) return; 
+
+        // Filter events only within the active month grid
+        const activeEventBlocks = activeGrid.querySelectorAll('.event-block');
+
+        activeEventBlocks.forEach(block => {
+            const eventCategory = block.getAttribute('data-category');
+            
+            if (activeCategories.has(eventCategory)) {
+                block.classList.remove('event-hidden');
+            } else {
+                block.classList.add('event-hidden');
+            }
+        });
+    }
+    
+    // --- Initialization ---
+    document.addEventListener('DOMContentLoaded', () => {
+         // Initialize with October shown
+         octoberGrid.classList.add('active-month');
+
+         eventBlocks = document.querySelectorAll('.event-block'); 
+         filterCalendar(); 
+
+         // Add click listener to all event blocks
+         eventBlocks.forEach(block => {
+             const dayBox = block.closest('.day-box');
+             const dayNumberElement = dayBox ? dayBox.querySelector('.day-number') : null;
+             const dateNumber = dayNumberElement ? parseInt(dayNumberElement.textContent.trim()) : 'N/A';
+
+             block.addEventListener('click', (e) => {
+                 e.stopPropagation(); 
+                 showModal(block, dateNumber);
+             });
+         });
+         
+         // Modal Closing Logic (same as before)
+         eventModal.addEventListener('click', (e) => {
+             if (e.target.id === 'event-modal') {
+                 closeModal();
+             }
+         });
+         document.addEventListener('keydown', (e) => {
+             if (e.key === "Escape" && !eventModal.classList.contains('hidden')) {
+                 closeModal();
+             }
+         });
+    });
+
+
+
+// Hamburger Menu Toggle
+    document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.getElementById('hamburger-btn');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', () => {
+        // Toggle the 'active' class on both the hamburger icon and the menu
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    });
+});
+
+</script>
+
+</body>
+</html>

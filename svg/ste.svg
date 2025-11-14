@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-Web_1920_1);
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient-2);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#00c683"/>
+      <stop offset="1" stop-color="#006342"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#00dcff"/>
+      <stop offset="1" stop-color="#00ffdc"/>
+    </linearGradient>
+    <clipPath id="clip-Web_1920_1">
+      <rect width="1920" height="1080"/>
+    </clipPath>
+  </defs>
+  <g id="Web_1920_1" data-name="Web 1920 – 1" class="cls-1">
+    <circle id="Ellipse_2" data-name="Ellipse 2" class="cls-2" cx="778.5" cy="778.5" r="778.5" transform="translate(-821 -1233)"/>
+    <g id="rectangle">
+      <rect id="Rectangle_1" data-name="Rectangle 1" class="cls-3" width="1249" height="151" rx="75.5" transform="translate(1646.279 290.191) rotate(-43)"/>
+      <rect id="Rectangle_2" data-name="Rectangle 2" class="cls-3" width="1249" height="151" rx="75.5" transform="translate(-115.221 1062.066) rotate(-43)"/>
+      <rect id="Rectangle_3" data-name="Rectangle 3" class="cls-3" width="1249" height="151" rx="75.5" transform="translate(177.779 1752.191) rotate(-43)"/>
+      <rect id="Rectangle_4" data-name="Rectangle 4" class="cls-3" width="1249" height="151" rx="75.5" transform="translate(1356.779 1391.816) rotate(-43)"/>
+      <rect id="Rectangle_5" data-name="Rectangle 5" class="cls-3" width="1249" height="151" rx="75.5" transform="translate(1356.779 1331.816) rotate(-43)"/>
+    </g>
+  </g>
+</svg>

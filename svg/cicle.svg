@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-3 {
+        clip-path: url(#clip-path-2);
+      }
+
+      .cls-4 {
+        clip-path: url(#clip-path);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#008ebc" stop-opacity="0.671"/>
+      <stop offset="1" stop-color="#0aff85" stop-opacity="0.671"/>
+    </linearGradient>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_1" data-name="Rectangle 1" class="cls-1" width="1920" height="1080"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect id="Rectangle_2" data-name="Rectangle 2" class="cls-2" width="1920" height="1080"/>
+    </clipPath>
+  </defs>
+  <g id="Web_1920_1" data-name="Web 1920 – 1" class="cls-3">
+    <g id="Web_1920_1-2" data-name="Web 1920 – 1" class="cls-4">
+      <g id="cirm" transform="translate(278.016 185.758)">
+        <circle id="Ellipse_1" data-name="Ellipse 1" class="cls-1" cx="311.5" cy="311.5" r="311.5" transform="translate(657.984 -181.758)"/>
+        <ellipse id="Ellipse_2" data-name="Ellipse 2" class="cls-1" cx="156" cy="155" rx="156" ry="155" transform="translate(1238.984 525.242)"/>
+        <circle id="Ellipse_3" data-name="Ellipse 3" class="cls-1" cx="227" cy="227" r="227" transform="translate(-106.016 -277.758)"/>
+        <circle id="Ellipse_4" data-name="Ellipse 4" class="cls-1" cx="285.5" cy="285.5" r="285.5" transform="translate(288.984 415.242)"/>
+      </g>
+    </g>
+    <g id="Web_1920_1-3" data-name="Web 1920 – 1" class="cls-3">
+      <g id="cirm-2" data-name="cirm" transform="translate(278.016 185.758)">
+        <circle id="Ellipse_1-2" data-name="Ellipse 1" class="cls-2" cx="311.5" cy="311.5" r="311.5" transform="translate(657.984 -181.758)"/>
+        <ellipse id="Ellipse_2-2" data-name="Ellipse 2" class="cls-2" cx="156" cy="155" rx="156" ry="155" transform="translate(1238.984 525.242)"/>
+        <circle id="Ellipse_3-2" data-name="Ellipse 3" class="cls-2" cx="227" cy="227" r="227" transform="translate(-106.016 -277.758)"/>
+        <circle id="Ellipse_4-2" data-name="Ellipse 4" class="cls-2" cx="285.5" cy="285.5" r="285.5" transform="translate(288.984 415.242)"/>
+      </g>
+    </g>
+  </g>
+</svg>
